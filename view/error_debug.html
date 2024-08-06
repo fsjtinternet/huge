@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>HugePHP Framework Error Page</title>
+    </head>
+    <body>
+        <h1>{$errorMsg}</h1>
+        <h3>{$from}</h3>
+        <h2>GET Data</h2>
+        {if (!isset($getData)) OR ($getData !== [])}
+            {foreach $getData as $key => $value}
+                <p>{$key}  =  {$value}</p>
+            {/foreach}
+        {else /}
+            <p>null</p>
+        {/if}
+        <h2>POST Data</h2>
+        {if (!isset($postData)) OR ($postData !== [])}
+            {foreach $postData as $key => $value}
+                <p>{$key}  =  {$value}</p>
+            {/foreach}
+        {else /}
+            <p>null</p>
+        {/if}
+        <h2>Cookie</h2>
+        {if (!isset($cookie)) OR ($cookie !== [])}
+            {foreach $cookie as $key => $value}
+                <p>{$key}  =  {$value}</p>
+            {/foreach}
+        {else /}
+            <p>null</p>
+        {/if}
+        <h2>Session</h2>
+        {if (!isset($session)) OR ($session !== [])}
+            {foreach $session as $key => $value}
+                <p>{$key}  =  {$value}</p>
+            {/foreach}
+        {else /}
+            <p>null</p>
+        {/if}
+        <h2>Server/Request Data</h2>
+        {if (!isset($serverData)) OR ($serverData !== [])}
+            {foreach $serverData as $key => $value}
+                <p>{$key}  =  {$value}</p>
+            {/foreach}
+        {else /}
+            <p>null</p>
+        {/if}
+    </body>
+</html>
